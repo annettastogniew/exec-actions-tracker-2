@@ -40,6 +40,8 @@
         filter[col] = option;
         toggleDropdown();
     };
+
+    console.log(options)
 </script>
 
 <main>
@@ -80,7 +82,7 @@
                 <div class="dropdown-options">
                     {#each filteredOptions as option}
                         <button
-                            class="dropdown-option"
+                            class={!multiple && (options[option] === filter[col]) ? "dropdown-option selected-option" : "dropdown-option"}
                             onclick={() =>
                                 multiple
                                     ? addOption(option)
@@ -149,6 +151,8 @@
     }
 
     .dropdown-option {
+        text-align: start;
+        width: 100%;
         padding: 5px;
         color: #484848;
         cursor: pointer;
@@ -161,5 +165,9 @@
     .no-options {
         margin-top: 5px;
         color: #d22b2b;
+    }
+
+    .selected-option {
+        background-color: #d3d3d3;
     }
 </style>
