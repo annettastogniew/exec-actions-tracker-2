@@ -38,7 +38,7 @@
     <tr transition:slide class="expanded-row">
         <td class="expanded-info">
             <p class="action-name">{rowInfo["Name"]}</p>
-            <p>{rowInfo["Date"]}</p>
+            <p class="action-date">{rowInfo["Date"]}</p>
             <p>{@html rowInfo["Summary"]}</p>
             <p><a href={link(rowInfo)}>Read more</a></p>
             {#if rowInfo["Legal Challenges"]}
@@ -59,6 +59,16 @@
     button {
         background-color: #cfe4f4;
         border: none;
+    }
+
+    a {
+        color: #0047AB;
+    }
+
+    a:visited,
+    a:hover,
+    a:active {
+        color: #0f00ab;
     }
 
     .exec-action {
@@ -99,5 +109,11 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+        color: #1c394f;
+    }
+
+    .action-date {
+        font-size: 14px;
+        margin-top: -5px;
     }
 </style>

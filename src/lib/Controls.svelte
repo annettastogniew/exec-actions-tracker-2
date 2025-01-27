@@ -25,15 +25,15 @@
 <main>
     <h2>Explore executive actions</h2>
     <div id="select-type">
-        <p>Show me...</p>
+        <p class="prompt">Show me...</p>
         <MultiSelect options={actionTypes} col="Category" multiple={true} />
     </div>
     <div id="select-topic">
-        <p>about...</p>
+        <p class="prompt">about...</p>
         <MultiSelect options={topics} col="Primary tag" multiple={true} />
     </div>
     <div id="select-date">
-        <p>issued...</p>
+        <p class="prompt">issued...</p>
         <MultiSelect options={timeSpans} col="Date" multiple={false} />
     </div>
 </main>
@@ -41,5 +41,9 @@
 <style>
     main {
         margin-bottom: 20px;
+    }
+
+    .prompt {
+        font-size: 19px;
     }
 </style>

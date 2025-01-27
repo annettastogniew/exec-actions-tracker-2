@@ -133,11 +133,13 @@
         display: flex;
         flex-wrap: wrap;
         gap: 5px;
+        margin-bottom: 5px;
     }
 
     .selected {
         color: #484848;
         padding: 5px;
+        font-size: 18px;
     }
 
     .dropdown-options {
