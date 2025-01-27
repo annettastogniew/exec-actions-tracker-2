@@ -1,0 +1,23 @@
+{
+  "name": "exec-actions-tracker",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "svelte": "^5.15.0",
+    "svelte-headless-table": "^0.18.3",
+    "vite": "^6.0.5"
+  },
+  "dependencies": {
+    "datatables": "^1.10.18",
+    "jquery": "^3.7.1",
+    "papaparse": "^5.5.1",
+    "svelte-bootstrap-icons": "^3.1.2"
+  }
+}
