@@ -33,7 +33,8 @@
 
 <style>
     table {
-        width: 96vw !important;
+        width: 98vw !important;
+        margin: auto;
     }
 
     .none-msg {
