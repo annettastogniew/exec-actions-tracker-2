@@ -1,5 +1,5 @@
 <script>
-    import { ChevronDown, ChevronUp } from "svelte-bootstrap-icons";
+    import { ChevronDown, ChevronUp, ExclamationTriangle } from "svelte-bootstrap-icons";
     import { slide } from 'svelte/transition';
 
     export let rowInfo;
@@ -24,12 +24,20 @@
 <tr>
     <td class="exec-action" style:border-radius={borderRadius} style:margin={margin}
         ><button class="row-button" on:click={() => expandRow()}
-            >{rowInfo["Slug"]}
-            {#if expand}
-                <ChevronUp width={18} height={18} fill={"#1c394f"} />
-            {:else}
-                <ChevronDown width={18} height={18} fill={"#1c394f"} />
-            {/if}
+            ><div class="action-info">
+                {rowInfo["Slug"]}
+                {#if rowInfo["Status"] !== ""}
+                    <ExclamationTriangle width={18} height={18}/>
+                {/if}
+            </div>
+            <div class="action-info">
+                <p>{rowInfo["Date"]}</p>
+                {#if expand}
+                    <ChevronUp width={18} height={18} fill={"#1c394f"} />
+                {:else}
+                    <ChevronDown width={18} height={18} fill={"#1c394f"} />
+                {/if}
+            </div>
             </button
         ></td
     >
@@ -38,9 +46,11 @@
     <tr transition:slide class="expanded-row">
         <td class="expanded-info">
             <p class="action-name">{rowInfo["Name"]}</p>
-            <p class="action-date">{rowInfo["Date"]}</p>
             <p>{@html rowInfo["Summary"]}</p>
-            <p><a href={link(rowInfo)}>Read more</a></p>
+            <p class="read-more"><a href={link(rowInfo)}>Read more</a></p>
+            {#if rowInfo["Status"] !== ""}
+                <p class="status-msg">This action has been {rowInfo["Status"].toLowerCase()}.</p>
+            {/if}
             {#if rowInfo["Legal Challenges"]}
                 <p class="info-heading">Legal Challenges</p>
                 {@html rowInfo["Legal Challenges"]}
@@ -77,7 +87,7 @@
         align-items: center;
         background-color: #cfe4f4;
         border: 1px solid #a5c6df;
-        padding: 10px 15px;
+        padding: 5px 15px;
         font-size: 18px;
         color: #1c394f;
     }
@@ -88,17 +98,19 @@
         border: 1px solid #a5c6df;
         border-radius: 0px 0px 7px 7px;
         border-top: 0;
+        width: 96vw !important;
     }
 
     .expanded-row {
         display: block;
         margin-bottom: 3px !important;
-        width: 96vw !important;
+        
     }
 
     .action-name {
         font-size: 17px;
         font-style: italic;
+        font-weight: 400;
     }
 
     .info-heading {
@@ -107,13 +119,25 @@
 
     .row-button {
         width: 100%;
+        align-items: center;
         display: flex;
         justify-content: space-between;
         color: #1c394f;
     }
 
-    .action-date {
-        font-size: 14px;
-        margin-top: -5px;
+    .read-more {
+        margin-top: 10px;   
+        margin-bottom: 25px;
+    }
+
+    .action-info {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .status-msg,
+    .info-heading {
+        font-weight: 400;
     }
 </style>

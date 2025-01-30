@@ -1,6 +1,7 @@
 <script>
     import ExpandableRow from "./ExpandableRow.svelte";
     import { allActions, filter } from './state.svelte';
+    import { ExclamationTriangle } from "svelte-bootstrap-icons";
 
     const filterData = action => {
         const filters = Object.keys(filter).filter(col => col !== "Date");
@@ -10,11 +11,14 @@
     }
 
     const selectedActions = $derived(allActions["data"].filter(action => filterData(action)));
+    let currentCount = $derived(selectedActions.length),
+        totalCount = allActions["data"].length;
 
 </script>
 
 <main>
     {#if selectedActions.length > 0}
+    <p>Showing {currentCount} out of {totalCount} total actions. Actions marked with <ExclamationTriangle height={18} width={18}/> have been legally challenged or blocked.</p>
         <table style:border-spacing={"0"}>
             <tbody>
                 {#each selectedActions as action}
@@ -22,16 +26,17 @@
                 {/each}
             </tbody>
         </table>
+    {:else}
+        <p class="none-msg"><em>No executive actions match your specifications.</em></p>
     {/if}
 </main>
 
 <style>
-    main {
-        height: 350px;
-        overflow: scroll;
-    }
-
     table {
         width: 96vw !important;
+    }
+
+    .none-msg {
+        color: #484848;
     }
 </style>
