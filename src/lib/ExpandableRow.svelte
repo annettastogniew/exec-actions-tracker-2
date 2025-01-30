@@ -98,7 +98,7 @@
         border: 1px solid #a5c6df;
         border-radius: 0px 0px 7px 7px;
         border-top: 0;
-        width: 96vw !important;
+        width: 98vw !important;
     }
 
     .expanded-row {
