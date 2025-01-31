@@ -18,7 +18,7 @@
 
 <main>
     {#if selectedActions.length > 0}
-    <p>Showing {currentCount} out of {totalCount} total actions. Actions marked with <ExclamationTriangle height={18} width={18}/> have been legally challenged or blocked.</p>
+    <p class="table-msg">Showing {currentCount} out of {totalCount} total actions. Actions marked with <ExclamationTriangle height={14} width={14}/> have been legally challenged or blocked.</p>
         <table style:border-spacing={"0"}>
             <tbody>
                 {#each selectedActions as action}
@@ -39,5 +39,10 @@
 
     .none-msg {
         color: #484848;
+    }
+    
+    .table-msg {
+        color: #484848;
+        font-size: 14px;
     }
 </style>

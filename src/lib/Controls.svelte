@@ -20,16 +20,16 @@
 
 <main>
     <h2>Explore executive actions</h2>
-    <div id="select-type">
-        <p class="prompt">Show me...</p>
+    <div class="ctrl-section" id="select-type">
+        <p class="prompt">SHOW ME...</p>
         <SelectButtons options={actionTypes} col="Category" multiple={true} />
     </div>
-    <div id="select-topic">
-        <p class="prompt">about...</p>
+    <div class="ctrl-section" id="select-topic">
+        <p class="prompt">ABOUT...</p>
         <SelectButtons options={topics} col="Primary tag" multiple={true} />
     </div>
-    <div id="select-date">
-        <p class="prompt">issued...</p>
+    <div class="ctrl-section" id="select-date">
+        <p class="prompt">ISSUED...</p>
         <SelectButtons options={timeSpans} col="Date" multiple={false} />
     </div>
 </main>
@@ -37,5 +37,17 @@
 <style>
     main {
         margin-bottom: 25px;
+    }
+
+    .prompt {
+        font-weight: 400;
+        font-family: 'ArtHouseCondensed';
+        margin-bottom: 7px;
+        font-size: 18px;
+    }
+
+    .ctrl-section {
+        padding-bottom: 10px;
+        border-bottom: 1px dotted #CCC;
     }
 </style>

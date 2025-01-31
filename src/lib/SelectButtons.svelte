@@ -75,7 +75,7 @@
     .select-btn.selected {
         background-color: #295475;
         color: #ffffff;
-        border: 1px solid #081017;
+        border: 1px solid #295475;
     }
 
     .ctrl-btn {

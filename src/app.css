@@ -13,12 +13,21 @@
 	src: url(./fonts/ArthouseOwned-Regular.woff2);
 }
 
+@font-face {
+	font-family: ArtHouseCondensed;
+	src: url(./fonts/ArthouseOwnedCondensed-Regular.woff2);
+}
+
 body {
 	background-color: #FFF !important;
 	font-family: 'ArtHouse', sans-serif;
 	min-height: 200px;
 	border-top: 1px dotted #CCC;
-	border-bottom: 1px dotted #CCC;
+}
+
+h2 {
+	margin-top: 5px;
+    font-family: 'ArtHouseCondensedBold';
 }
 
 .headline {
