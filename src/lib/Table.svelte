@@ -41,10 +41,13 @@
 </main>
 
 <style>
+    main {
+        margin-bottom: 50px;
+    }
+
     table {
         width: 98vw !important;
         margin: auto;
-        margin-bottom: 50px;
     }
 
     .none-msg {
