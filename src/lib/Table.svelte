@@ -39,6 +39,7 @@
 
     .none-msg {
         color: #484848;
+        margin-bottom: 10px;
     }
     
     .table-msg {

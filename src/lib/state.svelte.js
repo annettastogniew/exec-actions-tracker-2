@@ -1,10 +1,9 @@
-let today = new Date();
-today.setDate(today.getDate() - today.getDay());
-let todayDate = today.getTime(); 
+let d = new Date();
+d.setDate(d.getDate() - 10);
 export const filter = $state({
     "Category": ["Executive orders"],
     "Primary tag": [],
-    "Date": todayDate
+    "Date": d.getTime()
 });
 
 export const allActions = $state({"data": []});

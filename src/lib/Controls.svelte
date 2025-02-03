@@ -1,25 +1,29 @@
 <script>
     import { allActions } from "./state.svelte";
-    import MultiSelect from "./MultiSelect.svelte";
     import SelectButtons from "./SelectButtons.svelte";
     import { filter } from "./state.svelte";
 
-    let actionTypes = ["Executive orders", "Proclamations", "Memorandums", "Other documents"],
+    let actionTypes = [
+            "Executive orders",
+            "Proclamations",
+            "Memorandums",
+            "Other documents",
+        ],
         topics = [
             ...new Set(
                 allActions["data"].map((action) => action["Primary tag"]),
             ),
         ],
         timeSpans = {
-            "This week": filter["Date"],
+            "Past 10 days": filter["Date"],
             "Since Jan. 20": new Date("1/20/2025").getTime(),
         };
+    $inspect(filter["Date"])
 
     filter["Primary tag"] = topics;
 </script>
 
 <main>
-    <h2>Explore executive actions</h2>
     <div class="ctrl-section" id="select-type">
         <p class="prompt">SHOW ME...</p>
         <SelectButtons options={actionTypes} col="Category" multiple={true} />
@@ -41,13 +45,13 @@
 
     .prompt {
         font-weight: 400;
-        font-family: 'ArtHouseCondensed';
+        font-family: "ArtHouseCondensed";
         margin-bottom: 7px;
         font-size: 18px;
     }
 
     .ctrl-section {
         padding-bottom: 10px;
-        border-bottom: 1px dotted #CCC;
+        border-bottom: 1px dotted #ccc;
     }
 </style>
