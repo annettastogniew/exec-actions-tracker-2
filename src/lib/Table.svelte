@@ -44,6 +44,7 @@
     table {
         width: 98vw !important;
         margin: auto;
+        margin-bottom: 20px;
     }
 
     .none-msg {
