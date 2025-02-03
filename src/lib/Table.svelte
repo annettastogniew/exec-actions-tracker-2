@@ -32,6 +32,11 @@
 </main>
 
 <style>
+    main {
+        max-height: 300px !important;
+        overflow-y: scroll;
+    }
+    
     table {
         width: 98vw !important;
         margin: auto;
