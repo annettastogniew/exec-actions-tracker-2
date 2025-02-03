@@ -41,20 +41,9 @@
 </main>
 
 <style>
-    main {
-        max-height: 300px !important;
-        overflow-y: scroll;
-        mask-image: linear-gradient(
-            to bottom,
-            black calc(100% - 48px),
-            transparent 100%
-        );
-    }
-
     table {
         width: 98vw !important;
         margin: auto;
-        margin-bottom: 40px;
     }
 
     .none-msg {
