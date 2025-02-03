@@ -22,9 +22,9 @@
 <main>
     {#if selectedActions.length > 0}
         <p class="table-msg">
-            Showing {currentCount} out of {totalCount} total actions. Actions marked
-            with <ExclamationTriangle height={14} width={14} /> have been legally
-            challenged or blocked.
+            Showing {currentCount} out of {totalCount} total actions. <br />
+            Actions marked with <ExclamationTriangle height={14} width={14} /> have
+            been legally challenged or blocked.
         </p>
         <table style:border-spacing={"0"}>
             <tbody>
