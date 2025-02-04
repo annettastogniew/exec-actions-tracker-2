@@ -47,7 +47,7 @@
         <td class="expanded-info">
             <p class="action-name">{rowInfo["Name"]}</p>
             <p>{@html rowInfo["Summary"]}</p>
-            <p class="read-more"><a href={link(rowInfo)}>Read more</a></p>
+            <p class="read-more"><a href={link(rowInfo)} target="blank">Read more</a></p>
             {#if rowInfo["Status"] !== ""}
                 <p class="status-msg">This action has been {rowInfo["Status"].toLowerCase()}.</p>
             {/if}
