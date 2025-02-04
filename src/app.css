@@ -22,6 +22,7 @@ body {
 	background-color: #FFF !important;
 	font-family: 'ArtHouse', sans-serif;
 	min-height: 200px;
+	margin: 0 !important;
 }
 
 h2 {
