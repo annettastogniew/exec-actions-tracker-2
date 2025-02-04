@@ -23,6 +23,7 @@ body {
 	font-family: 'ArtHouse', sans-serif;
 	min-height: 200px;
 	margin: 0 !important;
+	padding: 5px;
 }
 
 h2 {
