@@ -1,6 +1,10 @@
 <script>
-    import { ChevronDown, ChevronUp, ExclamationTriangle } from "svelte-bootstrap-icons";
-    import { slide } from 'svelte/transition';
+    import {
+        ChevronDown,
+        ChevronUp,
+        ExclamationTriangle,
+    } from "svelte-bootstrap-icons";
+    import { slide } from "svelte/transition";
 
     export let rowInfo;
 
@@ -12,22 +16,25 @@
         expand = !expand;
     };
 
-    const link = action => {
+    const link = (action) => {
         const dateParts = action["Date"].split("/");
         const year = dateParts[2];
-        const month = dateParts[0].padStart(2, '0');
-        const formattedName = action["Name"].replace(/[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g, '').toLowerCase().replace(/\s+/g, '-');
+        const month = dateParts[0].padStart(2, "0");
+        const formattedName = action["Name"]
+            .replace(/[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g, "")
+            .toLowerCase()
+            .replace(/\s+/g, "-");
         return `https://www.whitehouse.gov/presidential-actions/${year}/${month}/${formattedName}/`;
     };
 </script>
 
 <tr>
-    <td class="exec-action" style:border-radius={borderRadius} style:margin={margin}
+    <td class="exec-action" style:border-radius={borderRadius} style:margin
         ><button class="row-button" on:click={() => expandRow()}
             ><div class="action-info">
                 {rowInfo["Slug"]}
                 {#if rowInfo["Status"] !== ""}
-                    <ExclamationTriangle width={18} height={18}/>
+                    <ExclamationTriangle width={18} height={18} />
                 {/if}
             </div>
             <div class="action-info">
@@ -38,8 +45,7 @@
                     <ChevronDown width={18} height={18} fill={"#1c394f"} />
                 {/if}
             </div>
-            </button
-        ></td
+        </button></td
     >
 </tr>
 {#if expand}
@@ -47,9 +53,16 @@
         <td class="expanded-info">
             <p class="action-name">{rowInfo["Name"]}</p>
             <p>{@html rowInfo["Summary"]}</p>
-            <p class="read-more"><a href={link(rowInfo)} target="blank">Read more</a></p>
+            <p class="read-more">
+                <a href={link(rowInfo)} target="blank">Read more</a>
+            </p>
             {#if rowInfo["Status"] !== ""}
-                <p class="status-msg">This action has been {rowInfo["Status"].toLowerCase()}.</p>
+                <div class="challenges">
+                    <ExclamationTriangle width={18} height={18} />
+                    <p class="status-msg">
+                        This action has been {rowInfo["Status"].toLowerCase()}.
+                    </p>
+                </div>
             {/if}
             {#if rowInfo["Legal Challenges"]}
                 <p class="info-heading">Legal Challenges</p>
@@ -72,7 +85,7 @@
     }
 
     a {
-        color: #0047AB;
+        color: #0047ab;
     }
 
     a:visited,
@@ -104,7 +117,6 @@
     .expanded-row {
         display: block;
         margin-bottom: 3px !important;
-        
     }
 
     .action-name {
@@ -126,7 +138,7 @@
     }
 
     .read-more {
-        margin-top: 10px;   
+        margin-top: 10px;
         margin-bottom: 25px;
     }
 
@@ -139,5 +151,11 @@
     .status-msg,
     .info-heading {
         font-weight: 400;
+    }
+
+    .challenges {
+        display: flex;
+        align-items: center;
+        gap: 5px;
     }
 </style>
