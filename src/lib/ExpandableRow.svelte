@@ -49,8 +49,8 @@
     >
 </tr>
 {#if expand}
-    {#if rowInfo["On White House Site"] === "Yes"}
-        <tr transition:slide class="expanded-row">
+    <tr transition:slide class="expanded-row">
+        {#if rowInfo["On White House Site"] === "Yes"}
             <td class="expanded-info">
                 <p class="action-name">{rowInfo["Name"]}</p>
                 <p>{@html rowInfo["Summary"]}</p>
@@ -61,7 +61,9 @@
                     <div class="challenges">
                         <ExclamationTriangle width={18} height={18} />
                         <p class="status-msg">
-                            This action has been {rowInfo["Status"].toLowerCase()}.
+                            This action has been {rowInfo[
+                                "Status"
+                            ].toLowerCase()}.
                         </p>
                     </div>
                 {/if}
@@ -70,14 +72,14 @@
                     {@html rowInfo["Legal Challenges"]}
                 {/if}
             </td>
-        </tr>
-    {:else}
-    <tr transition:slide class="expanded-row">
-        <td class="expanded-info">
-            <p class="no-details-msg"><em>Further details not yet available.</em></p>
-        </td>
+        {:else}
+            <td class="expanded-info">
+                <p class="no-details-msg">
+                    <em>Further details not yet available.</em>
+                </p>
+            </td>
+        {/if}
     </tr>
-    {/if}
 {/if}
 
 <style>
