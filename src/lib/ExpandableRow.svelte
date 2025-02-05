@@ -49,27 +49,35 @@
     >
 </tr>
 {#if expand}
+    {#if rowInfo["On White House Site"] === "Yes"}
+        <tr transition:slide class="expanded-row">
+            <td class="expanded-info">
+                <p class="action-name">{rowInfo["Name"]}</p>
+                <p>{@html rowInfo["Summary"]}</p>
+                <p class="read-more">
+                    <a href={link(rowInfo)} target="blank">Read more</a>
+                </p>
+                {#if rowInfo["Status"] !== ""}
+                    <div class="challenges">
+                        <ExclamationTriangle width={18} height={18} />
+                        <p class="status-msg">
+                            This action has been {rowInfo["Status"].toLowerCase()}.
+                        </p>
+                    </div>
+                {/if}
+                {#if rowInfo["Legal Challenges"]}
+                    <p class="info-heading">Legal Challenges</p>
+                    {@html rowInfo["Legal Challenges"]}
+                {/if}
+            </td>
+        </tr>
+    {:else}
     <tr transition:slide class="expanded-row">
         <td class="expanded-info">
-            <p class="action-name">{rowInfo["Name"]}</p>
-            <p>{@html rowInfo["Summary"]}</p>
-            <p class="read-more">
-                <a href={link(rowInfo)} target="blank">Read more</a>
-            </p>
-            {#if rowInfo["Status"] !== ""}
-                <div class="challenges">
-                    <ExclamationTriangle width={18} height={18} />
-                    <p class="status-msg">
-                        This action has been {rowInfo["Status"].toLowerCase()}.
-                    </p>
-                </div>
-            {/if}
-            {#if rowInfo["Legal Challenges"]}
-                <p class="info-heading">Legal Challenges</p>
-                {@html rowInfo["Legal Challenges"]}
-            {/if}
+            <p class="no-details-msg"><em>Further details not yet available.</em></p>
         </td>
     </tr>
+    {/if}
 {/if}
 
 <style>
@@ -111,7 +119,7 @@
         border: 1px solid #a5c6df;
         border-radius: 0px 0px 7px 7px;
         border-top: 0;
-        width: 98vw !important;
+        width: 100vw !important;
     }
 
     .expanded-row {
@@ -157,5 +165,9 @@
         display: flex;
         align-items: center;
         gap: 5px;
+    }
+
+    .no-details-msg {
+        margin-bottom: 15px;
     }
 </style>

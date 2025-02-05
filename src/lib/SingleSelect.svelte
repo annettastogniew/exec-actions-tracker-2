@@ -26,7 +26,7 @@
     .plain-select {
         border: none;
         border-bottom: 1px solid #d3d3d3;
-        width: 98vw;
+        width: 100vw;
         font-size: 17px;
         color: #484848;
         padding: 5px;

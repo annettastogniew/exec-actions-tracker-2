@@ -23,12 +23,11 @@ body {
 	font-family: 'ArtHouse', sans-serif;
 	min-height: 200px;
 	margin: 0 !important;
-	padding: 5px;
 }
 
 h2 {
 	margin-top: 5px;
-    font-family: 'ArtHouseCondensedBold';
+	font-family: 'ArtHouseCondensedBold';
 }
 
 .headline {
@@ -61,7 +60,7 @@ a {
 a:visited {
 	color: #1f40ba;
 }
-  
+
 
 .credits {
 	font-family: 'Roboto', sans-serif;
@@ -86,6 +85,10 @@ select:focus {
 @media (max-width: 900px) {}
 
 @media (max-width: 500px) {
+	body {
+		padding: 5px;
+	}
+
 	.headline {
 		font-size: 20px;
 	}

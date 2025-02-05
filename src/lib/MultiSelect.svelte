@@ -111,7 +111,7 @@
     }
 
     .select {
-        width: 98vw;
+        width: 100vw;
         border-bottom: 1px solid #d3d3d3;
         display: flex;
         justify-content: space-between;
@@ -149,7 +149,7 @@
         border: 1px solid #c6c6c6;
         border-top: none;
         border-radius: 0 0 7px 7px;
-        width: 98vw;
+        width: 100vw;
     }
 
     .dropdown-option {

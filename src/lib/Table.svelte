@@ -42,7 +42,7 @@
 
 <style>
     table {
-        width: 98vw !important;
+        width: 100vw !important;
         margin: auto;
     }
 
