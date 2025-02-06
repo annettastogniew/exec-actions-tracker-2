@@ -6,7 +6,7 @@ Run `npm run dev` and go to [http://localhost:5173/](http://localhost:5173/).
 To bundle files, run `npm run build`. Bundled files (what you'd upload to Akamai) will be in the `dist` folder.
 
 # Project structure
-The overall parent component is `App.svelte`.
+The overall parent component is `App.svelte`. Where data is loaded from [Google Sheet](https://docs.google.com/spreadsheets/d/1CjAlGZPrIzOG1Yj8up6ibMhOlIUYq_Z_1MqcHA7aVwA/edit?gid=0#gid=0).
 
 ## Custom components
 - `Controls.svelte`
@@ -32,4 +32,4 @@ The overall parent component is `App.svelte`.
 
 ## State variables
 - `filter`: filters applied to the executive actions
-- `allActions`: the full dataset of actions, loaded from the [Google Sheet](https://docs.google.com/spreadsheets/d/1CjAlGZPrIzOG1Yj8up6ibMhOlIUYq_Z_1MqcHA7aVwA/edit?gid=0#gid=0)
+- `allActions`: the full dataset of actions
