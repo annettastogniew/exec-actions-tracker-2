@@ -28,7 +28,7 @@ The overall parent component is `App.svelte`.
     - Props: 
         - `rowInfo`: The data for this particular row
 
-- MultiSelect.svelte - multi-select component (not used in final version)
+- `MultiSelect.svelte` - multi-select component (not used in final version)
 
 ## State variables
 - `filter`: filters applied to the executive actions
